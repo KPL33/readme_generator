@@ -21,21 +21,27 @@ GIVEN a command-line application that accepts user input
 WHEN I am prompted for information about my application repository
 THEN a high-quality, professional README.md is generated with the title of my project and sections entitled
 
+9) Title
+
 1) Description
 
-2) Table of Contents
+2) Table of Contents (don't need to prompt user for this)
 
 3) Installation
 
 4) Usage
 
-5) License
+5) License (will include 'list')
 
 6) Contributing
 
 7) Tests
 
-8) Questions
+8) GitHub
+
+9) Email
+
+
 
 • Entering project title get it to display as the title of the README
 • Entering description, installation instructions, usage information, contribution guidelines, and test instructions gets this information added to the sections by the same name, within the README 
