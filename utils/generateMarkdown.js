@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+//Here, we create a function that 'switch'es the 'license' badge that will display in the 'README', based on which 'license' ('case') is selected by the user.
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   switch (license) {
@@ -13,41 +13,35 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+//Here, we declare a 'function' that 'generate's 'markdown' language for the 'README', based on the user's 'responses'. We have also styled the content, via built-in markdown elements.
+function generateMarkdown(responses) {
+  const title = `<span style="color: yellow;">***${responses.title}***</span>`;
+  return `# ${title}
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+  ## Description
+  ${responses.description}
 
-  ## description
-  ${data.description}
+  ## Installation
+  ${responses.installation}
 
-  ## installation
-  ${data.installation}
+  ## Usage
+  ${responses.usage}
 
-  ## usage
-  ${data.usage}
+  ## License
+  ${renderLicenseBadge(responses.license)}
 
-  ## license
-  ${renderLicenseBadge(data.license)}
+  ## Contributing
+  ${responses.contributing}
 
-  ## contributing
-  ${data.contributing}
+  ## Tests
+  ${responses.tests}
 
-  ## tests
-  ${data.tests}
+  ## GitHub
+  ${responses.github}
 
-  ## github
-  ${data.github}
-
-  ## email
-  ${data.email}
+  ## Email
+  ${responses.email}
 
 `;
 }
