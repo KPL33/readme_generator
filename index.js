@@ -1,13 +1,13 @@
-//In the command line, we have 'init'ialized the 'npm inquirer 8.2.4, which generated our 'package.json' file in the root of our repository. Here, we 'require' that 'inquirer' package, which we'll utilize to 'prompt' the user for their input.
+//In the command line, we have 'init'ialized 'npm inquirer 8.2.4, which generated our 'package.json' file in the root of our repository. Here, we 'require' that 'inquirer' package, which we'll utilize to 'prompt' the user for their input.
 const inquirer = require('inquirer'); 
 
 //Here, we 'require' the 'fs module', which provides built-in functions that will allow us to read the user's inputs and eventually write them to our 'README' template.
 const fs = require('fs');
 
-//Here, we 'require' (import) the 'generateMarkdown'.js file. That file stores (and styles) the user's inputs and 'generate's the content of our 'Markdown' ('README' file).
+//Here, we 'require' (import) the accompanying 'generateMarkdown'.js file. That file stores (and styles) the user's inputs and 'generate's the content of our 'Markdown' ('README' file).
 const generateMarkdown = require('./utils/generateMarkdown');
 
-//Here, we declare an array of 'questions' that will prompt the user for their 'input'. Most are standard 'input' prompts, but because we want to limit the user's input to 1 of 4 choices (for this example), we assign that question a 'type' of 'list'. 
+//Here, we declare an array of 'questions' (objects) that will prompt the user for — and store — their 'input'. Most are standard 'input' prompts, but because we want to limit the user's input to 1 of 4 choices (for this example), we assign that question regarding the 'license' a 'type' of 'list'. 
 const questions = [
     {
         type: 'input',
@@ -61,7 +61,7 @@ const questions = [
 //Here, we declare a 'function' that 'write's the 'README.md' file, based on the 'readmeContent' provided by the user, through the prompts.
 function writeREADME(readmeContent) {
     //This 'function' utilizes the 'fs' module's built-in 'writeFile' function to 'write' the 'readmeContent'. We also include 'err' as a possible paramater, in case any error should occur during the writing process.
-    fs.writeFile('README.md', readmeContent, (err) => {
+    fs.writeFile('Professional_README.md', readmeContent, (err) => {
         //'if' an 'err'or occurs, the user is notified of this through a 'console' 'log'.
         if (err) {
             console.error('Error writing README file:', err);
